@@ -1,0 +1,10 @@
+server:
+  port: 8000
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+
+kafka:
+  topic-name: str-topic
