@@ -3,16 +3,16 @@ version: '3'
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
-    networks:
-      - broker-kafka
+#    networks:
+#      - broker-kafka
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka:
     image: confluentinc/cp-kafka:latest
-    networks:
-      - broker-kafka
+#    networks:
+#      - broker-kafka
     depends_on:
       - zookeeper
     ports:
@@ -27,8 +27,8 @@ services:
 
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
-    networks:
-      - broker-kafka
+#    networks:
+#      - broker-kafka
     depends_on:
       - kafka
     ports:
@@ -36,6 +36,6 @@ services:
     environment:
       KAFKA_BROKERCONNECT: kafka:29092
 
-networks:
-  broker-kafka:
-    driver: bridge
+#networks:
+#  broker-kafka:
+#    driver: bridge
