@@ -2,6 +2,7 @@ package com.vinnilmg.strconsumer.listeners;
 
 import com.vinnilmg.strconsumer.custom.StrConsumerCustomListener;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -18,7 +19,8 @@ public class StrConsumerListener {
         log.info("[listener 2] Mensagem recebida: {}", message);
     }
 
-    @StrConsumerCustomListener(groupId = "group-2")
+    // ContainerFactory alterado para o que tem o interceptador
+    @KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validMessageContainerFactory")
     public void listener3(String message) {
         log.info("[listener 3] Mensagem recebida: {}", message);
     }
