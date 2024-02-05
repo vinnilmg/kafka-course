@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "62762305-82d8-4db7-835b-064d6a47baeb",
+		"name": "kafka-course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7403997"
+	},
+	"item": [
+		{
+			"name": "[str-producer] sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Teste send message 8\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[json-producer] sendPayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 99,\r\n    \"userId\": 10,\r\n    \"productId\": 123,\r\n    \"cardNumber\": \"00101001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
